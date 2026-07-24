@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend2:
+    build: ./backend2
+    image: pramudithakaluthanthri/myrepo:backend2-v1.0
+    ports:
+      - "5000:5000"
+
+  frontend2:
+    build: ./frontend2
+    image: pramudithakaluthanthri/myrepo:frontend2-v1.0
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend2
